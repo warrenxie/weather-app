@@ -4,12 +4,20 @@ const search = document.querySelector(".search-box button");
 const weatherBox = document.querySelector(".weather-box");
 const weatherDetails = document.querySelector(".weather-details");
 const error404 = document.querySelector(".not-found");
+const searchInput = document.querySelector(".search-box input");
 
 // Add an event listener to the search button
-search.addEventListener("click", () => {
+search.addEventListener("click", searchWeather);
   // Define the API key and city name from the search input
+  searchInput.addEventListener("keyup", function(event){
+    if(event.key ==="Enter"){
+      searchWeather();
+    }
+  });
+
+function searchWeather(){
   const APIKey = "df4a073f388555fb425612942f197a44";
-  const city = document.querySelector(".search-box input").value;
+  const city = searchInput.value;
 
   // If the search input is empty, exit the function
   if (city === "") return;
@@ -77,4 +85,4 @@ search.addEventListener("click", () => {
       weatherDetails.classList.add("fadeIn");
       container.style.height = "590px";
     });
-});
+}

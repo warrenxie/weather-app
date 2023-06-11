@@ -11,17 +11,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #06283d;
+  background: linear-gradient(180deg, #3366cc 0%, #00cccc 100%);
 }
 
 .container {
   position: relative;
   width: 400px;
-  height: 105px;
-  background: #fff;
-  padding: 28px 32px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  padding:  32px;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   transition: 0.6s ease-out;
 }
@@ -39,15 +39,19 @@ body {
   width: 80%;
   font-size: 24px;
   font-weight: 500;
-  text-transform: uppercase;
-  padding-left: 32px;
+  text-transform: none;
+  padding-left: 12px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0,0,0, 0.1);
+  
 }
 
 .search-box input::placeholder {
   font-size: 20px;
   font-weight: 500;
   color: #06283d;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 .search-box button {
@@ -59,6 +63,8 @@ body {
   border-radius: 50%;
   font-size: 22px;
   transition: 0.4s ease;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0,0,0, 0.1);
 }
 
 .search-box button:hover {
@@ -70,6 +76,8 @@ body {
   position: absolute;
   color: #06283d;
   font-size: 28px;
+  margin-left: -6.5%;
+  
 }
 
 .weather-box {
@@ -182,4 +190,7 @@ not-found p {
     scale: 1;
     opacity: 1;
   }
+}
+@media screen and (max-width: 768px) {
+  .container{width:90%;}
 }
